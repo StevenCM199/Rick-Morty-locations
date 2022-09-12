@@ -25,38 +25,43 @@ function App() {
 
   return (
     <>
-      <h1 className="center">Rick&Morty app</h1>
+      <div className="main-banner"></div>
 
-      <div className='search-container'> 
-        <div className='seach-inner'>
-          <input type='text' value={value} onChange = {(e) => setValue(e.target.value)} />
-          <button onClick = {() => onSearch(value)}> Search </button>
-        </div> 
-        <div className ='dropdown'>
-          {locations
-            .filter((item)=> {
-              const searchTerm = value.toLowerCase();
-              const charName = item.name.toLowerCase();
-              
-              return (
-                searchTerm && 
-                charName.startsWith(searchTerm) && 
-                charName !== searchTerm
-              );          
-            })
-            .slice(0,10)
-            .map((item) => (
-            <div onClick={()=> onSearch(item.name, item.id)} 
-              className='drowdown-row' 
-              key={item.id}
-            > 
-              {item.name}
-            </div>
-          ))}
+      <div className="banner-logo">
+        <img className="logo" src="src\assets\logo.png" alt="" />
+        <h1 className="center">Locations Wiki</h1>
+
+          <div className='search-container'> 
+          <div className='seach-inner'>
+            <input type='text' value={value} onChange = {(e) => setValue(e.target.value)} />
+            <button onClick = {() => onSearch(value)}> Search </button>
+          </div> 
+          <div className ='dropdown'>
+            {locations
+              .filter((item)=> {
+                const searchTerm = value.toLowerCase();
+                const charName = item.name.toLowerCase();
+                
+                return (
+                  searchTerm && 
+                  charName.startsWith(searchTerm) && 
+                  charName !== searchTerm
+                );          
+              })
+              .slice(0,5)
+              .map((item) => (
+              <div onClick={()=> onSearch(item.name, item.id)} 
+                className='drowdown-row' 
+                key={item.id}
+              > 
+                {item.name}
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
-
-
+      
       <LocationInfo url={locationURL}/>
       <ResidentInfo url={locationURL}/>
     </>
