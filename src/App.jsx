@@ -28,7 +28,7 @@ function App() {
       <div className="main-banner"></div>
 
       <div className="banner-logo">
-        <img className="logo" src='src\assets\logo.png' alt="" />
+        <img className="logo" src='https://image.tmdb.org/t/p/original/kCyZc7mvqHdeUGpguSGxsWPxqpI.png' alt="" />
         <h1 className="center">Locations Wiki</h1>
 
           <div className='search-container'> 

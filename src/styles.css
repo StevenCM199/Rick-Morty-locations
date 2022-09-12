@@ -28,7 +28,7 @@ body{
   align-items: center;
   background: url('./assets/rickmortybg.jpg') no-repeat center;
   background-size: 100%;
-  height: 600px;
+  height: 800px;
   width: 100%;
   justify-content: center;
   filter: blur(2px);
